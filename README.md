@@ -28,6 +28,13 @@ Veritabanından gelen araç bilgileriyle dinamik kartlar oluşturan, hover anima
 
 - 📷 **Resim Galerisi (Admin Paneli)**  
 Kullanıcılar tarafından yüklenen görsellerin admin tarafında listelenip yönetilebildiği sade ve modern bir galeri sistemi.
+<h2 align="center"></h2>
+
+
+ ## 📷 **Proje Ait Görsel**
+
+<img src="https://github.com/user-attachments/assets/eef6312b-0743-459f-b1da-f2231ee2c8c6" alt="Portfolio Screenshot" width="600"/>
+<h2 align="center"></h2>
 
 ## 📫 Bana Ulaş
 - 🔗 LinkedIn: [Mustafa Aktürk](https://www.linkedin.com/in/mustafa-akt%C3%BCrk-318914344/)
@@ -35,6 +42,7 @@ Kullanıcılar tarafından yüklenen görsellerin admin tarafında listelenip y�
 
 
 
----
 
+---
 ⭐ Eğer projelerimi beğendiysen bir yıldız bırakabilirsin, motivasyon olur bana!
+
