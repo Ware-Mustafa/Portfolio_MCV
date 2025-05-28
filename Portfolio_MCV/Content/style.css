@@ -1,0 +1,664 @@
+﻿/* Genel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.6;
+    padding-top: 100px;
+}
+header {
+    position: fixed;
+    width: calc(100% - 30px);
+    padding: 15px 20px;
+    top: 20px;
+    left: 15px;
+    z-index: 999;
+    backdrop-filter: blur(12px);
+    background: linear-gradient(45deg, #00bcd4, #ff4081);
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+    transition: background 0.3s ease-in-out, padding 0.3s ease, box-shadow 0.3s ease-in-out;
+}
+#greetingText {
+    transition: opacity 0.5s ease-in-out, color 0.5s ease-in-out, transform 0.3s ease-in-out;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+/* Renk sınıfları */
+.greeting-color-1 {
+    color: #3498db;
+}
+/* Mavi */
+.greeting-color-2 {
+    color: #e74c3c;
+}
+/* Kırmızı */
+.greeting-color-3 {
+    color: #2ecc71;
+}
+/* Yeşil */
+.greeting-color-4 {
+    color: #f1c40f;
+}
+/* Sarı */
+.greeting-color-5 {
+    color: #9b59b6;
+}
+/* Mor */
+.greeting-color-6 {
+    color: #e67e22;
+}
+/* Turuncu */
+
+/* Fancy hover efekti */
+#greetingText:hover {
+    transform: scale(1.1) rotate(2deg);
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);
+}
+
+
+    /* Logo */
+    header .logo h1 {
+        font-size: 24px; /* Yazıyı biraz daha büyüttük */
+        color: #fff;
+        font-weight: 600; /* Orta düzeyde bir kalınlık */
+        letter-spacing: 3px; /* Harf aralığı arttırıldı */
+        text-transform: uppercase; /* Büyük harfler */
+        position: relative;
+        z-index: 2;
+        font-family: 'Poppins', sans-serif; /* Modern bir yazı tipi */
+        transition: color 0.3s ease, text-shadow 0.3s ease; /* Geçiş efektleri */
+    }
+
+        header .logo h1:hover {
+            color: #ff4081; /* Hoverda renk değişimi */
+            text-shadow: 0 0 25px rgba(255, 64, 129, 1), 0 0 50px rgba(255, 64, 129, 0.8), 0 0 100px rgba(255, 64, 129, 0.5); /* Neon ışık efekti */
+        }
+    /* Navbar */
+    header nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Navbar Links */
+    header .nav-links {
+        list-style-type: none;
+        display: flex;
+        gap: 25px; /* Menü öğeleri arasındaki boşluk arttırıldı */
+        margin: 0;
+    }
+
+        header .nav-links li {
+            position: relative;
+            font-size: 18px; /* Menü öğeleri fontu biraz büyütüldü */
+            transition: color 0.3s ease;
+        }
+
+            header .nav-links li a {
+                text-decoration: none;
+                color: #FFFFFF; /* Beyaz renk */
+                font-weight: 600; /* Font ağırlığı hafifletildi */
+                letter-spacing: 1px; /* Harf aralığı daraltıldı */
+                position: relative;
+                z-index: 2;
+                transition: all 0.3s ease;
+            }
+
+                /* Hover Neon Effekt */
+                header .nav-links li a::before {
+                    content: '';
+                    position: absolute;
+                    bottom: -6px; /* Alt kenar daha belirgin */
+                    left: 0;
+                    width: 100%;
+                    height: 3px; /* Çizgi daha belirgin */
+                   background: linear-gradient(135deg, rgba(0, 153, 255, 0.8), rgba(255, 0, 255, 0.8));
+                    transform: scaleX(0);
+                    transform-origin: bottom right;
+                    transition: transform 0.4s ease-out;
+                }
+
+                header .nav-links li a:hover::before {
+                    transform: scaleX(1);
+                    transform-origin: bottom left;
+                }
+
+                header .nav-links li a:hover {
+                    color: #00E676; /* Hoverda neon yeşil */
+                    text-shadow: 0 0 5px #00E676, 0 0 15px #00E676, 0 0 25px #00E676; /* Neon ışık efekti */
+                }
+
+                /* Aktif Link */
+                header .nav-links li a.active {
+                    color: #9C27B0; /* Aktif link için parlak mor */
+                    text-shadow: 0 0 8px #9C27B0, 0 0 20px #9C27B0, 0 0 30px #9C27B0; /* Neon mor aktif efekt */
+                }
+
+    /* Navbar Scroll Effect */
+    header.scrolled {
+        background: linear-gradient(45deg, #00bcd4, #ff4081);
+    }
+
+
+/* Navbar Links on Small Screens */
+@media (max-width: 768px) {
+    header .nav-links {
+        gap: 15px; /* Küçük ekranlarda menü öğeleri arasındaki boşluk azaltıldı */
+    }
+
+        header .nav-links li {
+            font-size: 14px; /* Menü öğeleri fontu küçültüldü */
+        }
+}
+
+
+@keyframes rgbBlink {
+    0% {
+        box-shadow: 0 0 10px rgba(0, 0, 255, 0.7); /* Mavi yanıp sönme */
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(0, 0, 255, 0.9); /* Mavi daha yoğun */
+    }
+
+    100% {
+        box-shadow: 0 0 10px rgba(0, 0, 255, 0.7); /* Tekrar normal */
+    }
+}
+
+#themeToggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff4081; /* Buton rengi sabit */
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+    /* Hover Efekti - Arka Gölgenin Yanıp Sönmesi */
+    #themeToggle:hover {
+        animation: rgbBlink 1.5s infinite alternate;
+        transform: scale(1.1); /* Hoverda buton büyümesi */
+    }
+
+/* LIGHT MODE */
+.light-mode {
+    background-color: steelblue;
+    color: #121212;
+}
+
+    .light-mode header {
+        background: rgba(255, 255, 255, 0.8);
+        color: #121212;
+    }
+
+    .light-mode .nav-links li a {
+        color: #121212;
+    }
+
+    .light-mode #themeToggle {
+        background-color: #00bcd4;
+        color: #fff;
+    }
+/* Hero Section */
+#hero {
+    background: linear-gradient(45deg, #00bcd4, #ff4081);
+    color: #fff;
+    padding: 120px 20px;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 2s ease-out;
+    margin-top: 80px;
+}
+
+    #hero .hero-content h2 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        opacity: 0;
+        animation: fadeInUp 2s ease-out forwards;
+    }
+
+    #hero .hero-content p {
+        font-size: 24px;
+        color: #f7f7f7;
+        opacity: 0;
+        animation: fadeInUp 2.5s ease-out forwards;
+        animation-delay: 0.5s;
+    }
+
+@keyframes neonEffect {
+    0% {
+        text-shadow: 0 0 10px #FF69B4, 0 0 20px #FF69B4, 0 0 30px #FF69B4;
+    }
+
+    100% {
+        text-shadow: 0 0 20px #FF69B4, 0 0 30px #FF69B4, 0 0 40px #FF69B4;
+    }
+}
+
+
+/* About Section */
+#about {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #2c2c2c;
+    border-top: 5px solid #00bcd4;
+    animation: fadeIn 1.5s ease-out;
+    margin-top: 80px; /* About bölümü navbar'dan biraz daha aşağıya yerleştirildi */
+}
+
+    #about .section-title h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        opacity: 0;
+        animation: fadeInUp 1.5s ease-out forwards;
+        text-shadow: 0 0 10px #ff4081, 0 0 20px #ff4081; /* Neon efekti */
+    }
+
+    #about .about-content p {
+        font-size: 18px;
+        color: #ccc;
+        max-width: 800px;
+        margin: 0 auto;
+        opacity: 0;
+        animation: fadeInUp 2s ease-out forwards;
+        animation-delay: 0.3s;
+    }
+#skills {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+    #skills .section-title h2 {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+
+    #skills .skills-content {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+
+    #skills .skill-item {
+        background-color: #333;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Beyaz gölge eklendi */
+        width: 200px;
+        transition: transform 0.3s ease;
+    }
+
+        #skills .skill-item h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #skills .skill-item:hover {
+            transform: translateY(-10px); /* Hover efekti ile yukarı kayma */
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4); /* Hover durumunda daha belirgin beyaz gölge */
+        }
+
+@media (max-width: 768px) {
+    #skills .skills-content {
+        flex-direction: column;
+    }
+}
+
+.project-images-top {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+    .project-images-top img {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+    }
+
+        .project-images-top img:hover {
+            transform: scale(1.1);
+        }
+
+#projects {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+    #projects .section-title h2 {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+
+    #projects .projects-content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    #projects .project-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+        #projects .project-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+        }
+
+    #projects .project-text {
+        width: 50%;
+        text-align: left;
+    }
+
+        #projects .project-text h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        #projects .project-text p {
+            color: #ddd;
+        }
+
+    #projects .project-image {
+        width: 40%;
+    }
+
+        #projects .project-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+.project-image {
+    width: 200px; /* Genişlik 200px olarak sabitlenmiş */
+    height: auto; /* Yükseklik oranı korunarak ayarlanır */
+    max-width: 30%; /* Ekrana göre en fazla %30 genişliğe ulaşır */
+}
+.project-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+    .project-navigation button {
+        background: linear-gradient(135deg, #ff7eb3, #ff758c);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+        .project-navigation button i {
+            font-size: 18px;
+        }
+
+        .project-navigation button:hover {
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+/* Animasyonlu geçiş için class */
+/* Animasyonlu geçiş için class */
+.animate-fade {
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    opacity: 0;
+    transform: translateX(20px);
+}
+@media (max-width: 768px) {
+    #projects .projects-content {
+        flex-direction: column;
+    }
+
+    #projects .project-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #projects .project-image {
+        width: 100%;
+    }
+}
+
+/* Contact Section */
+#contact {
+    background-color: #00bcd4;
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+    #contact .section-title h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+    #contact .contact-content p {
+        font-size: 18px;
+        color: #f7f7f7;
+    }
+/*ccccccccc*/
+#sponsors {
+    text-align: center;
+    margin: 50px 0;
+    overflow: hidden; /* Taşan içerikleri gizle */
+}
+    #sponsors h2 {
+        margin-bottom: 80px; /* Başlık ile slider arasına boşluk ekleyelim */
+    }
+.sponsor-slider {
+    display: flex;
+    justify-content: flex-start;
+    width: 100vw; /* Görüntü alanının tamamını kapla */
+    height: 100px; /* Yüksekliği sabitle */
+    overflow: hidden; /* Taşan içerikleri gizle */
+    white-space: nowrap; /* Tek satırda kayacak şekilde */
+    animation: slide 10s linear infinite; /* Sürekli sağdan sola kayma */
+}
+    /* Mouse üzerine gelince animasyonu durdur */
+    .sponsor-slider:hover {
+        animation-play-state: paused;
+    }
+
+.sponsor-item {
+    flex: 0 0 auto;
+    width: 150px; /* Sponsor logoları için genişlik */
+    height: 100%; /* Yüksekliği %100 yap */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 60px; /* Resimler arasında daha fazla boşluk bırak */
+}
+/*.slider img {
+    width: 100%;*/ /* Genişliği %100 yaparak slider boyutuna uyar */
+    /*height: auto;*/ /* Yüksekliği orantılı olarak ayarla */
+    /*object-fit: cover;*/ /* Resmin kesilmesini engelle, tüm alana yayılmasını sağlar */
+/*}*/
+
+.sponsor-item img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+    .sponsor-item:hover img {
+        transform: scale(1.1);
+    }
+
+/* Sürekli sağdan sola kayma animasyonu */
+@keyframes slide {
+    0% {
+        transform: translateX(100%); /* Sağdan başlasın */
+    }
+
+    100% {
+        transform: translateX(-100%); /* Sola kayıp tamamen kaybolacak */
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #121212;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+    footer p {
+        font-size: 16px;
+    }
+
+/* Animasyonlar */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Sayfa kaydırmalarını yavaşlat */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Tıklanan hedef bölüm için animasyon */
+section {
+    animation: smoothScroll 1.5s ease-out;
+}
+
+@keyframes smoothScroll {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* Aktif link stilini ekleyin */
+.nav-links a.active {
+    color: #ff4081; /* Aktif link için renk değişimi */
+    font-weight: bold; /* Daha belirgin yapmak için kalın yazı */
+}
+
+/* Neon Glow Effect for Links */
+@keyframes neonGlow {
+    0% {
+        text-shadow: 0 0 5px #ff4081, 0 0 10px #ff4081, 0 0 15px #ff4081, 0 0 20px #ff4081, 0 0 30px #ff4081, 0 0 40px #ff4081, 0 0 50px #ff4081;
+    }
+
+    50% {
+        text-shadow: 0 0 10px #ff4081, 0 0 20px #ff4081, 0 0 30px #ff4081, 0 0 40px #ff4081, 0 0 50px #ff4081, 0 0 60px #ff4081, 0 0 70px #ff4081;
+    }
+
+    100% {
+        text-shadow: 0 0 5px #ff4081, 0 0 10px #ff4081, 0 0 15px #ff4081, 0 0 20px #ff4081, 0 0 30px #ff4081, 0 0 40px #ff4081, 0 0 50px #ff4081;
+    }
+}
+
+header .nav-links li a {
+    animation: neonGlow 1.5s ease-in-out infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .nav-links {
+        flex-direction: column;
+    }
+
+    #hero .hero-content h2 {
+        font-size: 36px;
+    }
+
+    #about .about-content p {
+        font-size: 16px;
+    }
+
+    #skills .skills-content {
+        flex-direction: column;
+    }
+
+    #projects .projects-content {
+        flex-direction: column;
+    }
+}

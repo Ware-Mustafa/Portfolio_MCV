@@ -1,0 +1,244 @@
+﻿@{
+    ViewBag.Title = "PortLayout";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="@Url.Content("~/Content/style.css")" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/main.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Mustafa Aktürk</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">Hakkımda</a></li>
+                <li><a href="#skills">Yetenekler</a></li>
+                <li><a href="#projects">Projeler</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+
+        </nav>
+    </header>
+    <section id="hero">
+        <div class="hero-content">
+            <h2 id="greetingText"><span id="greeting"></span>, Ben Mustafa Aktürk</h2>
+            <p>C# Developer | Yazılım Geliştiricisi</p>
+        </div>
+    </section>
+
+
+    @RenderBody()
+    <section id="about">
+        <div class="section-title">
+            <h2>Hakkımda</h2>
+        </div>
+        <div class="about-content">
+            <p>Merhaba, ben Mustafa. Yazılım geliştirmeye büyük bir tutkum var ve C#, Python, JavaScript gibi dillerde deneyimliyim. Form ve web uygulamaları geliştiriyor, veritabanı yönetimiyle ilgili projeler yapıyorum. Sürekli öğrenmeye ve yeni teknolojileri keşfetmeye odaklanıyorum. Hedefim, yazılım dünyasında kendimi geliştirmek ve inovatif projeler üretmek.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-title">
+            <h2>Yetenekler</h2>
+        </div>
+        <div class="skills-content">
+            <!-- Web Geliştirme -->
+            <div class="skill-item">
+                <h3>Web Geliştirme</h3>
+                <p>HTML, CSS, JavaScript</p>
+            </div>
+            <!-- Programlama Dilleri -->
+            <div class="skill-item">
+                <h3>Programlama Dilleri</h3>
+                <p>C#, Python,Asp.net, Java</p>
+            </div>
+            <!-- Veritabanı Yönetimi -->
+            <div class="skill-item">
+                <h3>Veritabanı Yönetimi</h3>
+                <p>SQL, MySQL, MongoDB</p>
+            </div>
+            <!-- Mobil Uygulama Geliştirme -->
+            <div class="skill-item">
+                <h3>Mobil Uygulama Geliştirme</h3>
+                <p>Flutter, React Native</p>
+            </div>
+            <!-- Bulut Teknolojileri -->
+            <div class="skill-item">
+                <h3>Bulut Teknolojileri</h3>
+                <p>AWS, Azure, Google Cloud</p>
+            </div>
+            <!-- Bulut Teknolojileri -->
+            <div class="skill-item">
+                <h3>*Ekstra*</h3>
+                <p>Adobe photoshop , Ardunio, Adobe Premiere Pro,Blender</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="project-images-top">
+            <img src="~/content/assets/html.png" alt="Resim 1">
+            <img src="~/content/assets/css3.png" alt="Resim 2">
+            <img src="~/content/assets/js.png" alt="Resim 3">
+        </div>
+
+        <div class="section-title">
+            <h2>Projelerim</h2>
+        </div>
+
+        <div class="projects-content">
+            <div class="project-item" id="project1">
+                <div class="project-text">
+                    <h3>Kuaför Rezervasyon</h3>
+                    <p>Ben, kuaför rezervasyon programı geliştiren bir yazılım geliştiricisiyim. C# ve MongoDB Atlas kullanarak, kullanıcıların randevularını kolayca yönetebileceği, admin paneliyle hizmet ekleyip düzenleyebileceği bir sistem tasarladım. Aynı zamanda, Python entegrasyonu ile otomatik mesaj gönderimi sağladım, böylece randevulara dair bildirimler kullanıcıların telefonlarına zamanında ulaşıyor.</p>
+                </div>
+                <div class="project-image">
+                    <img src="~/content/assets/chair-logo.png" alt="Proje Resmi" class="project-image" />
+                </div>
+            </div>
+
+            <div class="project-item" id="project2">
+                <div class="project-text">
+                    <h3>Kitap Stok Yönetim Sistemi</h3>
+                    <p>Kitap Stok Yönetim Sistemi, ASP.NET MVC ile geliştirilmiş, kitapların kolayca yönetilmesini sağlayan web tabanlı bir stok takip sistemidir. Kütüphaneler, kitapçılar ve eğitim kurumları için tasarlanan bu sistem, kitap ekleme, düzenleme, silme, arama ve stok takibi gibi temel işlemleri hızlı ve güvenilir bir şekilde gerçekleştirir.</p>
+                </div>
+                <div class="project-image">
+                    <img src="~/content/assets/books.png" alt="Proje Resmi" class="project-image" />
+                </div>
+            </div>
+
+            <div class="project-item" id="project3">
+                <div class="project-text">
+                    <h3>Stok Programı</h3>
+                    <p>Stok yönetimi için geliştirdiğim uygulama, Windows Forms (WinForms) kullanarak ürünlerin takibini ve yönetimini kolaylaştıran bir sistem sunuyor. Kullanıcılar, ürün ekleyip, güncelleyebilecek, stok durumlarını kontrol edebilecek ve basit arama işlemleri gerçekleştirebilecek. Bu program, işletmelerin günlük stok işlemlerini verimli bir şekilde yönetmelerine olanak tanıyor.</p>
+                </div>
+                <div class="project-image">
+                    <img src="~/content/assets/btnNecessaries.png" alt="Proje Resmi" class="project-image" />
+                </div>
+            </div>
+
+            <div class="project-item" id="project4">
+                <div class="project-text">
+                    <h3>Otel Rezervasyon Sistemi</h3>
+                    <p>
+                        Windows Form ile Müşteri Yönetim Sistemi
+
+                        🔹 Müşteri Yönetimi
+
+                        Müşteri kayıtlarını ekleme, güncelleme ve silme
+
+                        Kimlik ve iletişim bilgilerini kaydetme
+
+                        🔹 Oda Yönetimi
+
+                        Odaların doluluk durumunu görüntüleme
+
+                        Müşterilere uygun odaların atanması
+
+                        Fiyat ve oda tipi belirleme (Tek Kişilik, Çift Kişilik, Suit vb.)
+
+                        🔹 Rezervasyon Sistemi
+
+                        Kullanıcılar için giriş ve çıkış tarihlerini seçme
+
+                        Rezervasyon kaydı oluşturma
+
+                        Müşteri adına rezervasyon detaylarını görüntüleme
+
+                        🔹 Arama ve Filtreleme
+
+                        Müşteri bilgilerine göre hızlı arama
+                    </p>
+                </div>
+                <div class="project-image">
+                    <img src="~/content/assets/hotelgg.png" alt="Proje Resmi" class="project-image" />
+                </div>
+            </div>
+        </div>
+
+        <div class="project-navigation">
+            <button id="prevButton">&lt;</button> <!-- Önceki proje simgesi -->
+            <button id="nextButton">&gt;</button> <!-- Sonraki proje simgesi -->
+        </div>
+    </section>
+    <section id="sponsors">
+        <h2>Kullandığım Teknolojiler</h2>
+        <div class="sponsor-slider">
+            <div class="sponsor-item">
+                <a href="https://www.sponsor1.com" target="_blank">
+                    <img src="~/content/assets/css3.png" alt="Sponsor 1" />
+                </a>
+            </div>
+            <div class="sponsor-item">
+                <a href="https://www.sponsor2.com" target="_blank">
+                    <img src="~/content/assets/ccc.png" alt="Sponsor 2" />
+                </a>
+            </div>
+            <div class="sponsor-item">
+                <a href="https://www.sponsor3.com" target="_blank">
+                    <img src="~/content/assets/js.png" alt="Sponsor 3" />
+                </a>
+            </div>
+            <div class="sponsor-item">
+                <a href="https://www.sponsor3.com" target="_blank">
+                    <img src="~/content/assets/sql.png" alt="Sponsor 4" />
+                </a>
+            </div>
+            <div class="sponsor-item">
+                <a href="https://www.sponsor3.com" target="_blank">
+                    <img src="~/content/assets/Mysql.png" alt="Sponsor 5" />
+                </a>
+            </div>
+            <div class="sponsor-item">
+                <a href="https://www.sponsor3.com" target="_blank">
+                    <img src="~/content/assets/MongoDB.png" alt="Sponsor 6" />
+                </a>
+            </div>
+            <div class="sponsor-item">
+                <a href="https://www.sponsor3.com" target="_blank">
+                    <img src="~/content/assets/ll.png" alt="Sponsor 7" />
+                </a>
+            </div>
+            <div class="sponsor-item">
+                <a href="https://www.sponsor3.com" target="_blank">
+                    <img src="~/content/assets/vsst.png" alt="Sponsor 8" />
+                </a>
+            </div>
+            <div class="sponsor-item">
+                <a href="https://www.sponsor3.com" target="_blank">
+                    <img src="~/content/assets/asss.png" alt="Sponsor 8" />
+                </a>
+            </div>
+            <!-- Daha fazla sponsor ekleyebilirsin -->
+        </div>
+    </section>
+
+    
+    <section id="contact">
+        <div class="section-title">
+            <h2>İletişim</h2>
+        </div>
+        <div class="contact-content">
+            <p>Email: work.mustafa07@gmail.com</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Mustafa Aktürk | Tüm Hakları Saklıdır.</p>
+    </footer>
+    <button id="themeToggle">🌙 Dark Mode</button>
+    <script src="~/js/script.js"></script>
+</body>
+</html>
+
+
